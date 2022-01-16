@@ -1,0 +1,15 @@
+# Keep environment variables out of version control
+.env
+
+# node dependencies
+node_modules
+
+# build folder
+dist
+
+# prisma relates content, remember the migrations are
+# ignored here for tutorial purpose only. In real project migrations play hugge role.
+migrations
+
+# SQLite db file
+*.db
