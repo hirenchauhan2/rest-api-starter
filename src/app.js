@@ -35,9 +35,11 @@ app.get('/', async (req, res) => {
 // routes end here
 
 // Error handling middleware, we delegate the handling to the centralized error handler
-app.use(async (err, req, res) =>
+// eslint-disable-next-line no-unused-vars
+app.use(async (err, req, res, next) => {
+  logger.err(err, 'app error handled at app error handler')
   // send 500 - Internal Server Error
-  res.status(500).json({ error: true, message: 'Internal server error' })
-);
+ return res.status(500).json({ error: true, message: 'Internal server error' })
+});
 
 export default app;
