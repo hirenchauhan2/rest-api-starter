@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import logger from './utils/logger';
 
 // import routes here
-
+import authorsRoutes from './components/authors/authors.routes';
 
 // init express app
 const app = express();
@@ -27,10 +27,8 @@ app.get('/', async (req, res) => {
 });
 
 // Add your routes here
-/**
- * for example,
- * app.use('/api/v1/authors', authorsRoutes);
- */
+app.use('/api/v1/authors', authorsRoutes);
+
 
 // routes end here
 
